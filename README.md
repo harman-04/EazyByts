@@ -1,7 +1,7 @@
 This is simple chatapp using
 
 
-Backend - jdk 21 , maven for build ,  springboot 3.5.0 , spring security , jwt token authentication and autherization , spring jpa , mysql , firebase (for push notification) , websockets , storm.js. 
+Backend - jdk 21 , maven for build ,  springboot 3.5.0 , spring security , jwt token authentication and autherization , spring jpa , mysql , firebase (for push notification) , websockets , storm.js, lombok. 
 
 Frontend - Reactjs vite , bootstrap , css  , websocket , socket.js , firebase , axios for api call.
 
