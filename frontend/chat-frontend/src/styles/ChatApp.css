@@ -491,6 +491,7 @@ body {
     height: calc(100vh - 120px); /* Adjust height based on navbar/footer */
     display: flex;
     flex-direction: column;
+     margin-bottom: 45px; 
 }
 
 .chat-header {
@@ -567,7 +568,7 @@ body {
     display: flex;
     align-items: center;
 }
-
+ 
 .message-input {
     flex-grow: 1;
     border-radius: 25px;
@@ -665,4 +666,115 @@ body {
     border-radius: 1rem; /* Make it pill-shaped */
     min-width: 24px; /* Ensure minimum width for single digits */
     text-align: center;
+}
+
+
+
+/* UPDATED Footer Styles to match Navbar */
+.app-footer {
+    /* Mimic the navbar's gradient, but maybe slightly inverted or darker if preferred */
+    background: linear-gradient(to right, #2575fc, #6a11cb); /* Blue to Deep purple gradient (inverted from navbar for variation) */
+    color: #ffffff;
+    padding: 1.8rem 0; /* Slightly more padding than before */
+    border-top-left-radius: 15px; /* Keep rounded top corners */
+    border-top-right-radius: 15px; /* Keep rounded top corners */
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow upwards for prominence */
+    font-size: 0.95rem;
+    position: relative; /* Needed for potential subtle design elements if added */
+    z-index: 1000; /* Ensure footer is above other elements if needed */
+   
+}
+
+.app-footer .footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    justify-content: space-between; /* Space out content */
+    align-items: center; /* Vertically align items */
+    width: 100%;
+}
+
+.app-footer .footer-section {
+    flex: 1; /* Each section takes equal space */
+    min-width: 250px; /* Minimum width before wrapping */
+    padding: 0 15px;
+    text-align: center; /* Default text alignment */
+}
+
+.app-footer .footer-section:first-child {
+    text-align: left; /* Align copyright to left */
+}
+
+.app-footer .footer-section:last-child {
+    text-align: right; /* Align social icons to right */
+}
+
+@media (max-width: 768px) {
+    .app-footer .footer-section {
+        text-align: center !important; /* Center all sections on mobile */
+        margin-bottom: 15px; /* Add space between sections */
+    }
+    .app-footer .footer-section:last-child {
+        margin-bottom: 0; /* No bottom margin for the last section */
+    }
+}
+
+
+.app-footer .footer-brand {
+    font-family: 'Pacifico', cursive; /* Use a similar elegant font if imported for brand consistency */
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center brand if it's in its own section */
+    margin-bottom: 10px;
+}
+
+.app-footer .footer-brand .bi {
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+
+
+.app-footer .footer-link {
+    color: rgba(255, 255, 255, 0.85); /* Lighter color for links for contrast */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    margin: 0 8px; /* Space between links */
+    font-weight: 500;
+}
+
+.app-footer .footer-link:hover {
+    color: #ffffff; /* Pure white on hover */
+    text-decoration: none; /* No underline on hover as it's less elegant */
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+.app-footer .social-icons-group {
+    display: flex;
+    justify-content: flex-end; /* Align icons to the right by default */
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .app-footer .social-icons-group {
+        justify-content: center; /* Center icons on mobile */
+    }
+}
+
+.app-footer .social-icon {
+    font-size: 1.6rem; /* Slightly larger icons */
+    color: rgba(255, 255, 255, 0.85); /* Lighter color for icons */
+    margin: 0 12px; /* More space between icons */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.app-footer .social-icon:hover {
+    color: #ffffff;
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.app-footer .copyright-text {
+    color: rgba(255, 255, 255, 0.7); /* Slightly subdued copyright text */
+    font-size: 0.9em;
 }

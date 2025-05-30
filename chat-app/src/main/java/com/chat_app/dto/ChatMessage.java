@@ -1,20 +1,21 @@
 package com.chat_app.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.Builder; // Add this import
-import lombok.NoArgsConstructor; // Add this import
-import lombok.AllArgsConstructor; // Add this import
+import lombok.NoArgsConstructor;
 
 @Data
-@Builder // Add @Builder for cleaner object creation in ChatController
-@NoArgsConstructor // Add no-arg constructor for deserialization
-@AllArgsConstructor // Add all-args constructor for @Builder
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ChatMessage {
-    private String sender;
-    private String receiver; // null for public
-    private String content;
+    private String id; // Add this field
     private MessageType type;
-    private String timestamp; // Add timestamp field
+    private String sender;
+    private String receiver;
+    private String content;
+    private String timestamp;
 
     public enum MessageType {
         CHAT,
@@ -22,5 +23,15 @@ public class ChatMessage {
         LEAVE
     }
 
-    // Lombok will generate getters and setters with @Data
+    // Lombok's @Data annotation will automatically generate the setId(String id) method.
+    // If you are not using Lombok, you will need to add it manually:
+    /*
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+    */
 }

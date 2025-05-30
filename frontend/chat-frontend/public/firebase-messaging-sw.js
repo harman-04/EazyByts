@@ -11,6 +11,7 @@ importScripts('https://www.gstatic.com/firebasejs/9.3.0/firebase-messaging-compa
 // import { getMessaging } from 'firebase/messaging/sw'; // Note 'sw' for service worker context
 
 // IMPORTANT: Your Firebase project configuration (must match src/utils/firebase.js)
+// add it from your firebase 
 const firebaseConfig = {
   apiKey: "",
   authDomain: "",

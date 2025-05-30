@@ -2,7 +2,7 @@
 import SockJS from 'sockjs-client';
 import { Stomp } from '@stomp/stompjs';
 import { getToken } from '../utils/token';
-
+let socketInstance = null; // Singleton instance
 const connectSocket = () => {
     const token = getToken();
 
@@ -20,6 +20,12 @@ const connectSocket = () => {
         // console.log(str); // Uncomment this line to see detailed STOMP logs
     };
 
+    console.log("connectSocket() called. Existing instance:", socketInstance);
+
+    if (!socketInstance) {
+        socketInstance = { client: stompClient, };
+        console.log("connectSocket() created new instance:", socketInstance);
+    }
     return {
         client: stompClient,
         connect: (onConnectCallback, onErrorCallback) => {
